@@ -1,0 +1,34 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-accent: oklch(0.8075 0.0165 106.76);
+  --color-dark: oklch(0.2696 0.0551 260.33);
+  --color-error: oklch(0.6313 0.1569 23.57);
+  --color-light: oklch(0.9404 0.029 82.6);
+  --color-primary: oklch(0.7763 0.1425 75.73);
+  --color-secondary: oklch(0.8342 0.117 87.43);
+  --color-success: oklch(0.6821 0.1143 156.86);
+  --font-sans: var(--font-quicksand);
+}
+
+@layer components {
+  .scrollbar-thin {
+    scrollbar-color: var(--color-dark) var(--color-primary);
+    scrollbar-width: thin;
+  }
+
+  .shape {
+    shape-outside: circle(76% at 24% 14%);
+  }
+}
+
+@utility ring-b {
+  box-shadow: inset 0 -1px var(--color-accent);
+}
+
+@utility grid-cols-fit-* {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(calc(var(--spacing) * --value(integer)), 1fr)
+  );
+}
